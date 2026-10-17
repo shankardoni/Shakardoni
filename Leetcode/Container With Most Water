@@ -1,0 +1,30 @@
+#include<iostream>
+#include<vector>
+//#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    vector<int>clm={1,6,4,3,5,6,2};
+
+    int l=0;
+    int n=clm.size();
+    int r=n-1;
+    int maxarea=0;
+    
+    
+    while(l<r){
+        int h=min(clm[l],clm[r]);
+        int w=r-l;
+        int area=h*w;
+        maxarea=max(maxarea,area);
+        if(clm[l]<clm[r]){
+            l++;
+        }
+        else{
+            r--;
+        }
+    }
+    
+    cout<<maxarea;
+    return 0;
+}
